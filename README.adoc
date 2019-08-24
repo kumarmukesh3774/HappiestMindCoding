@@ -1,1 +1,5 @@
+This is a project on uplpoading a text file and searching the input text in the uploaded file.
+It is build on spring boot framework.
 To run the projetc clone this and import it in IDE and run as spring boot application.
+once build is complete open the browser and add url :http://localhost:8080.
+There you will get the option of uploading a file.Select a text file and click upload. Once uploaded go down to search input field. Enter  the text there and click on Search .If the input text is found in uploaded file the out put will be input text is found, else the input text is not found.
