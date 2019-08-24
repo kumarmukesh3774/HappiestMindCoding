@@ -1,0 +1,40 @@
+
+<body>
+
+	<div th:if="${message}">
+		<h2 th:text="${message}"/>
+	</div>
+
+	<div>
+		<form method="POST" enctype="multipart/form-data" action="/">
+			<table>
+				<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+				<tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+			</table>
+		</form>
+	</div>
+	<br>
+	<div>
+	<div>Type to Search</div>
+	<input id ="searchtext"type="text">
+	<input type="submit" onclick="findTheText()" value="Search">
+	<p id="demo"></p>
+	</div>
+	<script>
+	var findTheText=function(){
+		var searchText=document.getElementById("searchtext").value;
+		
+		  var xhttp = new XMLHttpRequest();
+		  xhttp.onreadystatechange=function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		      document.getElementById("demo").innerHTML = this.responseText;
+		    }
+		  };
+		  xhttp.open("GET", "http://localhost:8080/text/" + searchText, true);
+		  xhttp.send();
+	}
+	</script>
+	
+
+</body>
+</html>
